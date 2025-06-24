@@ -6,9 +6,11 @@ const nodemailer = require("nodemailer");
 const app = express();
 app.use(cors());
 app.use(express.json());
+require('dotenv').config();
+
 
 // ✅ Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/visaDB", {
+mongoose.connect("process.env.MONGO_URI/visaDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
